@@ -51,7 +51,10 @@ jobs:
       sudo apt-get install -y libnss-myhostname pkgconf libwtmpdb-dev libpam0g-dev zlib1g-dev
 
       # Build Golang
-      sudo apt-get install -y golang
+      # go1.26 requires go1.24.6+ as bootstrap; trixie has go1.24.4, backports has go1.26
+      echo "deb http://deb.debian.org/debian trixie-backports main" | sudo tee /etc/apt/sources.list.d/trixie-backports.list
+      sudo apt-get update
+      sudo apt-get install -y -t trixie-backports golang-go
  
       # Build Python
       sudo apt-get install -y lsb-release sharutils libreadline-dev libncursesw5-dev  libbz2-dev liblzma-dev libgdbm-dev libdb-dev tk-dev blt-dev  libexpat1-dev libbluetooth-dev locales-all libsqlite3-dev media-types
