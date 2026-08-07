@@ -1,16 +1,16 @@
-diff --git a/src/crypto/internal/backend/hostfips.go b/src/crypto/internal/backend/hostfips.go
-index aa21cd4db9..3224482bc9 100644
---- a/src/crypto/internal/backend/hostfips.go
-+++ b/src/crypto/internal/backend/hostfips.go
-@@ -7,6 +7,7 @@ package backend
+diff --git a/src/crypto/internal/fips140deps/hostfips/hostfips.go b/src/crypto/internal/fips140deps/hostfips/hostfips.go
+index 12d90a4742..0000000000 100644
+--- a/src/crypto/internal/fips140deps/hostfips/hostfips.go
++++ b/src/crypto/internal/fips140deps/hostfips/hostfips.go
+@@ -7,6 +7,7 @@ package hostfips
  import (
  	"fmt"
  	"os"
 +	"strings"
+ 	"sync"
  )
  
- func hostFIPSModeEnabled() bool {
-@@ -21,5 +22,18 @@ func hostFIPSModeEnabled() bool {
+@@ -56,5 +57,18 @@ func checkHostFIPS() bool {
  		fmt.Fprintf(os.Stderr, "error reading /proc/sys/crypto/fips_enabled: %v\n", err)
  		os.Exit(1)
  	}
@@ -55,4 +55,3 @@ index 1562cee268..7247314a4d 100644
 +	providerNameFips    = C.CString("symcryptprovider")
  	providerNameDefault = C.CString("default")
  )
- 
