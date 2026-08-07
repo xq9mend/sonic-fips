@@ -1,5 +1,4 @@
 diff --git a/src/crypto/internal/fips140deps/hostfips/hostfips.go b/src/crypto/internal/fips140deps/hostfips/hostfips.go
-index 12d90a4742..0000000000 100644
 --- a/src/crypto/internal/fips140deps/hostfips/hostfips.go
 +++ b/src/crypto/internal/fips140deps/hostfips/hostfips.go
 @@ -7,6 +7,7 @@ package hostfips
@@ -55,3 +54,4 @@ index 1562cee268..7247314a4d 100644
 +	providerNameFips    = C.CString("symcryptprovider")
  	providerNameDefault = C.CString("default")
  )
+
